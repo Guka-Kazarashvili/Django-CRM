@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Recrod Page{% endblock %}
+{% block content %}
+
+<div class="card">
+    <div class="card-header">{{ costumer_record.username }}</div>
+    <div class="card-body">
+        <p class="card-title">
+            <strong>Email: </strong>{{ costumer_record.email }}<br>
+            <strong>Phone: </strong>{{ costumer_record.phone }}<br>
+            <strong>Address: </strong>{{ costumer_record.address }}<br>
+            <strong>City: </strong>{{ costumer_record.city }}<br>
+            <strong>Zip Code: </strong>{{ costumer_record.zip_code }}<br>
+        </p>
+    </div>
+</div>
+<a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+<a href="{% url 'delete_record' costumer_record.id %}" class="btn btn-danger">Delete</a>
+<a href="{% url 'update_record' costumer_record.id %}" class="btn btn-success">Update Record</a>
+{% endblock %}
